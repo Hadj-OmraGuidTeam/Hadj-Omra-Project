@@ -3,21 +3,14 @@ let mysql = require('mysql')
 
 //Create a connection with database
 //this configuration is depends on my local server MySql
-// var mysqlConnection = mysql.createConnection({
-//   host:'127.0.0.1',
-//   user:'root',
-//   port:'3310',
-//   password:'ismail',
-//   database:'hadj_omra'
-// });
-
 var mysqlConnection = mysql.createConnection({
-  host:'hadjo.mysql.database.azure.com',
-  user:'nour@hadjo',
-  password:'hadj@omra1',
-  database:'hadj',
-  ssl:true,
+  host:'127.0.0.1',
+  user:'root',
+  port:'3310',
+  password:'ismail',
+  database:'hadj_omra'
 });
+
 //Connect to the database
 mysqlConnection.connect((err)=>{
   if (!err)

@@ -89,8 +89,8 @@ router.post('/register', async (req,res,next)=>{
             to: user.mail,
             from:'i.bellaouedj@esi-sba.dz',
             subject:'Validation Mail',
-            text:'Click in this URL to Confirm your Regesting https://hadomrat.azurewebsites.net/valid/'+token,
-            html:'Click in this URL to Confirm your Regesting https://hadomrat.azurewebsites.net/valid/'+token,
+            text:'Click in this URL to Confirm your Regesting http://localhost:8080/valid/'+token,
+            html:'Click in this URL to Confirm your Regesting http://localhost:8080/valid/'+token,
           }).then(() => {
                console.log('Validation Message sent')
           }).catch((error) => {

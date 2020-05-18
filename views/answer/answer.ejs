@@ -20,7 +20,7 @@ margin: auto;" >
   </div>
 
 
-<form action="https://hadomrat.azurewebsites.net/question/answer/<%=question.id%>" method="post" class=" ui for"style="max-width: 100rem ;max-width: 800px;
+<form action="http://localhost:8080/question/answer/<%=question.id%>" method="post" class=" ui for"style="max-width: 100rem ;max-width: 800px;
     margin: auto;">
     <div class="field">
         <label>Add an answer</label>
@@ -46,7 +46,7 @@ margin: auto;" >
             <div class="card-body">
               <blockquote class="blockquote mb-0">
                 <p><%= answer[i].cont %></p>
-                <a  class="card-link" type="submit" href="https://hadomrat.azurewebsites.net/question/Adelete/<%=answer[i].idr%>" value="Delete">Delete</a>
+                <a  class="card-link" type="submit" href="http://localhost:8080/question/Adelete/<%=answer[i].idr%>" value="Delete">Delete</a>
                 <%} else {%>
             </p></p>
 
