@@ -1,0 +1,138 @@
+<%-include ('Aheader')-%>
+<title>LOIsir</title>
+<body>
+   <!-- ================ begin of resturants ================= -->
+    <div class="container">
+        <h3>Resturant Upload</h3>
+        <%= typeof msg != 'undefined' ? msg : '' %>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <p>
+            Add resturant name
+          </p>
+          <textarea class="form-control" name="name"  rows="3"></textarea>
+      
+          <p>
+            Add resturant place
+          </p>
+          <textarea class="form-control" name="place"  rows="3"></textarea>
+         
+            <div class="file-field input-field">
+              
+                <input name="myImage" type="file">
+              </div>
+              
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </form>
+        </div>
+         <!-- ================ begin of places ================= -->
+        <div class="container">
+          <h3>Places Upload</h3>
+          <%= typeof msg != 'undefined' ? msg : '' %>
+          <form action="/uploadP" method="POST" enctype="multipart/form-data">
+            <p>
+              Add Place name
+            </p>
+            <textarea class="form-control" name="nameP"  rows="3"></textarea>
+            
+            <p>
+              Add more details
+            </p>
+            <textarea class="form-control" name="placeP"  rows="3"></textarea>
+            
+              <div class="file-field input-field">
+                
+                  <input name="myImageP" type="file">
+                </div>
+               
+              </div>
+              <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+          </div>
+          <div class="container">
+             <!-- ================ begin of supermarchet ================= -->
+            <h3>SuperMarcket Upload</h3>
+            <%= typeof msg != 'undefined' ? msg : '' %>
+            <form action="/uploadM" method="POST" enctype="multipart/form-data">
+              <p>
+                Add superMarcket name
+              </p>
+              <textarea class="form-control" name="nameM"  rows="3"></textarea>
+              <p>
+                Add superMarcket place
+              </p>
+              <textarea class="form-control" name="placeM"  rows="3"></textarea>
+                <div class="file-field input-field">
+                  <div class="btn grey">
+                    <span>File</span>
+                    <input name="myImageM" type="file">
+                  </div>
+                  
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </form>
+            </div>
+             <!-- ================ begin of Hotel ================= -->
+             <h3>Hotel Upload</h3>
+            <%= typeof msg != 'undefined' ? msg : '' %>
+            <form action="/uploadH" method="POST" enctype="multipart/form-data">
+              <p>
+                Add Hotel  name
+              </p>
+              <textarea class="form-control" name="nameH"  rows="3"></textarea>
+              
+              <p>
+                Add Hotel price
+              </p>
+              <textarea class="form-control" name="priceH"  rows="3"></textarea>
+              <p>
+                Add Hotel avis
+              </p>
+              <textarea class="form-control" name="avis"  rows="3"></textarea>
+                <div class="file-field input-field">
+                  <div class="btn grey">
+                    <span>File</span>
+                    <input name="myImageH" type="file">
+                  </div>
+                  
+                </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+              </form>
+            </div>
+            <!-- ================ begin of Agence ================= -->
+            <h3> Agence Upload</h3>
+            <%= typeof msg != 'undefined' ? msg : '' %>
+            <form action="/uploadA" method="POST" enctype="multipart/form-data">
+              <p>
+                Add Agence  name
+              </p>
+              <textarea class="form-control" name="nameA"  rows="3"></textarea>
+              <p>
+                Add Agence  description
+              </p>
+              <textarea class="form-control" name="nameA"  rows="3"></textarea>
+              
+              <p>
+                Add Agence price
+              </p>
+              <textarea class="form-control" name="priceA"  rows="3"></textarea>
+                <div class="file-field input-field">
+                  <div class="btn grey">
+                    <span>File</span>
+                    <input name="myImageA" type="file">
+                  </div>
+                  <div class="file-path-wrapper">
+                    
+                  </div>
+                </div> <button class="btn btn-primary" type="submit">Submit</button>
+              </form>
+            </div>
+          
+          
+        
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>

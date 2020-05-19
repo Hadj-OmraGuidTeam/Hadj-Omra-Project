@@ -34,6 +34,7 @@ app.use(bodyParser.json())
 //this calling api.js which is contain sql commandes
 app.use('/',require('./config/api'))
 app.use('/',require('./question'))
+app.use('/',require('./assets/js/A_loisir'))
 //this calling question.js which is contain sql comma
 app.use('/question',require('./question'))
 //this for calling the static files .js .css images
@@ -87,6 +88,9 @@ app.get('/user',redirectLogin,(request, response)=>{
 })
 app.get('/user/transport',redirectLogin,(request, response)=>{
   response.render('UserPages/transport',request.session.variabales)
+})
+app.get('/user/hopitaux',redirectLogin,(request, response)=>{
+  response.render('UserPages/hopitaux',request.session.variabales)
 })
 app.get('/user/fi9h_hadj',redirectLogin,(request, response)=>{
   response.render('UserPages/fi9h_hadj',request.session.variabales)

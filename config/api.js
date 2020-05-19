@@ -382,7 +382,7 @@ router.get('/admin',(request,response)=>{
                   throw error;
               }
               console.log('Results genre Homme ======> ',results[0].valeur);
-              data2.push({genre:'Homme',value:results[0].valeur})
+              data2.push({label:'Homme',value:results[0].valeur})
               console.log(data2);
               console.log(typeof(data2));
               sql = "SELECT Count(genre) as valeur FROM users where genre='Femme'";
@@ -391,7 +391,7 @@ router.get('/admin',(request,response)=>{
                       throw error;
                   }
                   console.log('Results genre femme ======> ',results[0].valeur);
-                  data2.push({genre:'Femme',value:results[0].valeur})
+                  data2.push({label:'Femme',value:results[0].valeur})
                   response.render('Admin Pages/admin',{output1:data1,output2:data2})
               })
           })

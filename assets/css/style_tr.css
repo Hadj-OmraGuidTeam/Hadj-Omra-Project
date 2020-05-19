@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+}
+#cont{
+    border-radius: 12px;
+    width: 80%;
+    margin: auto;
+    background-color: #f5f5dc59;
+}
+
+.container{
+    width: 75%;
+    margin: auto;
+    direction: rtl;
+    font-size: 20px;
+    padding: 1px 0 50px 0;
+    width: 95%;
+}
+.container h4{
+    color: #1a1a75;
+    font-size: 23px;
+}
+.container h1{
+    font-size: 35px;
+    text-align: center;
+    color: cadetblue;
+    margin: 25px 0 40px;
+}
