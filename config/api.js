@@ -354,4 +354,54 @@ router.get('/',(request,response)=>{
 
     });})
 // -------------------------------------------------------------------------------
+
+//------------------------(Session Admin)----------------------------------------
+router.get('/admin',(request,response)=>{
+  var data1=[];
+  var data2=[];
+  var sql = "SELECT Count(status) as valeur FROM users where status='Omra'";
+
+  mysqlConnection.query(sql, function(error, results) {
+      if (error) {
+          throw error;
+      }
+      console.log('Results status omra ======> ',results[0].valeur);
+      data1.push({status:'Omra',value:results[0].valeur})
+
+      sql = "SELECT Count(status) as valeur FROM users where status='Hadj'";
+      mysqlConnection.query(sql, function(error, results) {
+          if (error) {
+              throw error;
+          }
+          console.log('Results status hadj ======> ',results[0].valeur);
+          data1.push({status:'hadj',value:results[0].valeur})
+
+          sql = "SELECT Count(genre) as valeur FROM users where genre='Homme'";
+          mysqlConnection.query(sql, function(error, results) {
+              if (error) {
+                  throw error;
+              }
+              console.log('Results genre Homme ======> ',results[0].valeur);
+              data2.push({genre:'Homme',value:results[0].valeur})
+              console.log(data2);
+              console.log(typeof(data2));
+              sql = "SELECT Count(genre) as valeur FROM users where genre='Femme'";
+              mysqlConnection.query(sql, function(error, results) {
+                  if (error) {
+                      throw error;
+                  }
+                  console.log('Results genre femme ======> ',results[0].valeur);
+                  data2.push({genre:'Femme',value:results[0].valeur})
+                  response.render('Admin Pages/admin',{output1:data1,output2:data2})
+              })
+          })
+
+      })
+  })
+
+
+    console.log('Register after render Admin :===> ');
+  ;})
+//-------------------------------------------------------------------------------
+
 module.exports = router;

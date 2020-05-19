@@ -124,6 +124,9 @@ app.get('/user/hadj-tamato3',redirectLogin, (request, response) => {
 app.get('/form',redirectLogin,(request, response) => {
   response.render('UserPages/form',request.session.variabales)
 })
+app.get('/admin',(request, response) => {
+  response.render('Admin Pages/admin',request.session.variabales)
+})
 //------------------------------------------------------------------------------
 
 app.post('/', (request, response) => {
