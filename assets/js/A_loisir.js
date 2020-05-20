@@ -36,9 +36,9 @@ const uploadA=multer({
 }).single('myImageA');
 
 //-----------get admin page----------------//
-router.get('/admin',(rea,res)=>{
-    res.render('pages/A_loisir')
-})
+// router.get('/admin',(rea,res)=>{
+//     res.render('pages/A_loisir')
+// })
 //-----------loisir1 page----------------//
 
 //-----------get loisir page----------------//
@@ -49,10 +49,7 @@ router.get('/loisir',(request,response)=>{
         }
         response.render('Home page/loisir',{loisir:results})
     })
-
-
-
-    })
+  })
     //-----------get loisir2 page----------------//
 router.get('/loisir2',(request,response)=>{
     mysqlConnection.query('SELECT * FROM hotel right join agence ON hotel.idH>0 UNION SELECT * FROM hotel left join agence ON hotel.idH>0',(err,results)=>{
@@ -61,10 +58,7 @@ router.get('/loisir2',(request,response)=>{
         }
         response.render('Home page/loisir2',{loisir:results})
     })
-
-
-
-    })
+  })
     //-----------Post for resturants----------------//
     // create table resturant(idP INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(44),dsc VARCHAR(255),path VARCHAR(255));
     router.post('/upload',(req,res)=>{

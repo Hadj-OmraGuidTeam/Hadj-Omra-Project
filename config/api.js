@@ -278,7 +278,7 @@ router.post('/forum',redirectLogin,(request, response) => {
 
 // ---------------------------------
 //Contact Us Session User
-router.post('/user/contact', async(request, response) => {
+router.post('/user/contact',redirectLogin, async(request, response) => {
   var contact=request.body
   // var sql =" SELECT * from users WHERE UserMail = ?";
   // mysqlConnection.query(sql, [mail.forgot],async(err,rows,fields)=>{
@@ -360,16 +360,16 @@ router.get('/',(request,response)=>{
 // -------------------------------------------------------------------------------
 
 //------------------------(Session Admin)----------------------------------------
-router.get('/admin',(request,response)=>{
+router.get('/admin',redirectLogin,(request,response)=>{
   var data1=[];
   var data2=[];
-  var sql = "SELECT Count(status) as valeur FROM users where status='Omra'";
-
+  if (request.session.userId === 45 || request.session.userId === 46 || request.session.userId === 47 )
+  {var sql = "SELECT Count(status) as valeur FROM users where status='Omra'";
   mysqlConnection.query(sql, function(error, results) {
       if (error) {
           throw error;
       }
-      console.log('Results status omra ======> ',results[0].valeur);
+
       data1.push({status:'Omra',value:results[0].valeur})
 
       sql = "SELECT Count(status) as valeur FROM users where status='Hadj'";
@@ -377,7 +377,7 @@ router.get('/admin',(request,response)=>{
           if (error) {
               throw error;
           }
-          console.log('Results status hadj ======> ',results[0].valeur);
+
           data1.push({status:'hadj',value:results[0].valeur})
 
           sql = "SELECT Count(genre) as valeur FROM users where genre='Homme'";
@@ -385,16 +385,15 @@ router.get('/admin',(request,response)=>{
               if (error) {
                   throw error;
               }
-              console.log('Results genre Homme ======> ',results[0].valeur);
+
               data2.push({label:'Homme',value:results[0].valeur})
-              console.log(data2);
-              console.log(typeof(data2));
+
               sql = "SELECT Count(genre) as valeur FROM users where genre='Femme'";
               mysqlConnection.query(sql, function(error, results) {
                   if (error) {
                       throw error;
                   }
-                  console.log('Results genre femme ======> ',results[0].valeur);
+
                   data2.push({label:'Femme',value:results[0].valeur})
                   response.render('Admin Pages/admin',{output1:data1,output2:data2})
               })
@@ -404,7 +403,8 @@ router.get('/admin',(request,response)=>{
   })
 
 
-    console.log('Register after render Admin :===> ');
+    console.log('Register after render Admin :===> ');}
+    else { response.redirect("/user")}
   ;})
 //-------------------------------------------------------------------------------
 

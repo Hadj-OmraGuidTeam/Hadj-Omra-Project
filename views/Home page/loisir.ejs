@@ -33,19 +33,22 @@
                     </p>
                 </div>
             </div>
+
             <div class="owl-carousel popuar-course-carusel">
+                <% for (var i=0;i< loisir.length;i++) {%>
+                    <% if(loisir[i].name !=="") {%>
                 <div class="single-popular-course">
                     <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/loisir1.jpg" alt="" />
+                        <img class="f-img img-fluid mx-auto" src="uploads/<%= loisir[i].path%>" alt="" />
                     </div>
                     <div class="details">
                         <div class="d-flex justify-content-between mb-20">
-                            <p class="name" style="font-family: 'Almarai', sans-serif;">مطعم فود ماستر
+                            <p class="name" style="font-family: 'Almarai', sans-serif;"><%= loisir[i].name %>
                             </p>
                             <p class="value">$150</p>
                         </div>
                         <a href="#">
-                            <h4>7230 Sayyid Ash Shuhada, Al Masani, Medina 42313</h4>
+                            <h4><%= loisir[i].dsc %></h4>
                         </a>
                         <div class="bottom d-flex mt-15">
                             <ul class="list">
@@ -70,191 +73,14 @@
                         </div>
                     </div>
                 </div>
+                <%}%>
 
-                <div class="single-popular-course">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/loisir2.jpeg" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">MATAAM SAUDIA ALWAJH
-                            </p>
-                            <p class="value">$150</p>
-                        </div>
-                        <a href="#">
-                            <h4>Al Aziziah, Al Wajh 48721,
-                                <br> Arabie saoudite</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a><i class="far fa-star"></i></a>
-                                </li>
-                            </ul>
-                            <p class="ml-20">25 avis</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="single-popular-course">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/loisir4.jpg" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">Safra Saudia
-
-                            </p>
-                            <p class="value">$150</p>
-                        </div>
-                        <a href="#">
-                            <h4>An Nur, Jabal An Nur, Mecca 24238, Arabie saoudite</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-star-half"></i></a>
-                                    <!--<i class="fas fa-star-half-alt"></i> nos 3amr----->
-                                </li>
-
-                            </ul>
-                            <p class="ml-20">89 avis</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="single-popular-course">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/loisir5.jpg" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">Hardee's</p>
-                            <p class="value">$150</p>
-                        </div>
-                        <a href="#">
-                            <h4>TAHLIA ROAD، Ar Rawdah, Jeddah 22425, Arabie saoudite</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="far fa-star"></i></a>
-                                </li>
-                            </ul>
-                            <p class="ml-20">229 avis</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-popular-course sghira">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/appetizer-1846083.jpg" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">Zaiqa Alyum Restaurant
-                            </p>
-                            <p class="value">$150</p>
-                        </div>
-                        <a href="#">
-                            <h4>TAHLIA ROAD، Ar Rawdah, Jeddah 22425,
-                                <br> Arabie saoudite</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-star-half"></i></a>
-                                </li>
-                            </ul>
-                            <p class="ml-20">368 avis</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-popular-course">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/loisir7.jpg" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">Sialkot Restaurant
-
-                            </p>
-                            <p class="value">$150</p>
-                        </div>
-                        <a href="#">
-                            <h4>Jarir,
-                                <br> Riyadh 12833, <br>
-                                Arabie saoudite</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="far fa-star"></i></a>
-                                </li>
-                            </ul>
-                            <p class="ml-20">182 avis</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <% }%>
         </div>
+        </div>
+
     </section>
+
     <!-- ================ End of restaurant ================= -->
 
 
@@ -265,222 +91,29 @@
             <div class="row justify-content-center section-title">
                 <div class="col-lg-12">
                     <h2>
-                        Quelques places a visité
+                        Quelques Place
                     </h2>
                     <p>
-                        quelque places en saudi arabien .
+                        quelque place a visité .
                     </p>
                 </div>
             </div>
+
             <div class="owl-carousel popuar-course-carusel">
+                <% for (var i=0;i< loisir.length;i++) {%>
+                    <% if(loisir[i].nameP !=="") {%>
                 <div class="single-popular-course">
                     <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/haram.jpg" alt="" />
+                        <img class="f-img img-fluid mx-auto" src="uploads/<%= loisir[i].pathP%>" alt="" />
                     </div>
                     <div class="details">
                         <div class="d-flex justify-content-between mb-20">
-                            <p class="name"> Masjid al-Haram
-
+                            <p class="name" style="font-family: 'Almarai', sans-serif;"><%= loisir[i].nameP %>
                             </p>
-
+                            <p class="value">$150</p>
                         </div>
                         <a href="#">
-                            <h4>La mosquée al-Harâm, ou grande mosquée de la Mecque, est une mosquée de la ville de La
-                                Mecque en Arabie saoudite</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                            </ul>
-
-                            <p class="ml-20">277 844 avis</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="single-popular-course">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/madan2.jfif" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">Madâin Sâlih
-
-                            </p>
-
-                        </div>
-                        <a href="#">
-                            <h4>Madâin Sâlih ou Madain Saleh est un lieu situé au nord-ouest de l'Arabie saoudite.</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a><i class="far fa-star"></i></a>
-                                </li>
-                            </ul>
-                            <p class="ml-20">2534 avis</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="single-popular-course">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/fahd2.jfif" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">Jet d'eau du roi Fahd
-
-
-                            </p>
-
-                        </div>
-                        <a href="#">
-                            <h4>Le jet d'eau du roi Fahd, haut au maximum de 312 mètres, est l'emblème de la ville de
-                                Djeddah depuis sa mise en service
-                                en 1985.</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-star-half"></i></a>
-                                    <!--<i class="fas fa-star-half-alt"></i> nos 3amr----->
-                                </li>
-
-                            </ul>
-                            <p class="ml-20">21 115 avis</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="single-popular-course">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/bordj.jfif" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">Abraj Al Bait Towers
-                            </p>
-
-                        </div>
-                        <a href="#">
-                            <h4>L'Abraj Al Bait Towers est un complexe formé de sept gratte-ciels situé à La Mecque,
-                                dont les travaux ont été achevés en
-                                2012.</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-star-half"></i></a>
-                                </li>
-                            </ul>
-                            <p class="ml-20">17 451 avis</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-popular-course sghira">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/quba.jfif" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">Mosquée de Quba
-
-                            </p>
-
-                        </div>
-                        <a href="#">
-                            <h4>La mosquée de Quba, à environ 3 km au sud du centre-ville de Médine en Arabie saoudite
-                            </h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fas fa-star-half"></i></a>
-                                </li>
-                            </ul>
-                            <p class="ml-20">72 183 avis</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-popular-course">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/atalah.jpg" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">Atallah Happy Land Park
-
-
-                            </p>
-
-                        </div>
-                        <a href="#">
-                            <h4>parc d'attractions
-                                <br> King Abdul Aziz Rd, <br>
-                                Arabie saoudite</h4>
+                            <h4><%= loisir[i].dscP %></h4>
                         </a>
                         <div class="bottom d-flex mt-15">
                             <ul class="list">
@@ -500,84 +133,17 @@
                                     <a href="#"><i class="far fa-star"></i></a>
                                 </li>
                             </ul>
-                            <p class="ml-20">8 333 avis</p>
+
+                            <p class="ml-20">563 avis </p>
                         </div>
                     </div>
                 </div>
-                <div class="single-popular-course">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/cornich3.jpg" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">New Jeddah Corniche
-                            </p>
-                        </div>
-                        <a href="#">
-                            <h4>Pavillon de plage
-                                <br> jeddah, <br>
-                                Arabie saoudite</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="far fa-star"></i></a>
-                                </li>
-                            </ul>
-                            <p class="ml-20">5 101 avis</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-popular-course">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/cornich3.jpg" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">New Jeddah Corniche
-                            </p>
-                        </div>
-                        <a href="#">
-                            <h4>Pavillon de plage
-                                <br> jeddah, <br>
-                                Arabie saoudite</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="far fa-star"></i></a>
-                                </li>
-                            </ul>
-                            <p class="ml-20">5 101 avis</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <%}%>
+
+                <% }%>
         </div>
+        </div>
+
     </section>
     <!-- ================ End of places ================= -->
 
@@ -589,27 +155,29 @@
             <div class="row justify-content-center section-title">
                 <div class="col-lg-12">
                     <h2>
-                        Quelques super macrhés
+                        Quelques supermarchet
                     </h2>
                     <p>
-                        quelque super marchés en saudi arabien .
+                        quelque supermarchet a visité .
                     </p>
                 </div>
             </div>
+
             <div class="owl-carousel popuar-course-carusel">
+                <% for (var i=0;i< loisir.length;i++) {%>
+                    <% if(loisir[i].nameM !=="") {%>
                 <div class="single-popular-course">
                     <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/marché1.jpg" alt="" />
+                        <img class="f-img img-fluid mx-auto" src="uploads/<%= loisir[i].pathM%>" alt="" />
                     </div>
                     <div class="details">
                         <div class="d-flex justify-content-between mb-20">
-                            <p class="name"> Noori Supermarket
-
+                            <p class="name" style="font-family: 'Almarai', sans-serif;"><%= loisir[i].nameM %>
                             </p>
-
+                            <p class="value">$150</p>
                         </div>
                         <a href="#">
-                            <h4>Masjid Ash Shaikh Ibn Baz, ااانوري، Mecca 24243, Arabie saoudite</h4>
+                            <h4><%= loisir[i].dscM %></h4>
                         </a>
                         <div class="bottom d-flex mt-15">
                             <ul class="list">
@@ -630,197 +198,16 @@
                                 </li>
                             </ul>
 
-                            <p class="ml-20">3023 avis </p>
+                            <p class="ml-20">563 avis </p>
                         </div>
                     </div>
                 </div>
+                <%}%>
 
-                <div class="single-popular-course">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/fruit-426002_1920.jpg" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">Tamimi Markets
-
-                            </p>
-
-                        </div>
-                        <a href="#">
-                            <h4>Prince Turkey Street, Al Khobar Al Shamalia, Al Khobar 34427, Arabie saoudite</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a><i class="fas fa-star-half-alt"></i></a>
-                                </li>
-                            </ul>
-                            <p class="ml-20">812 avis</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="single-popular-course">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/cheese-2725235.jpg" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">Super Marché
-
-
-                            </p>
-
-                        </div>
-                        <a href="#">
-                            <h4>6791 Al Mansuriah Street, Ar Rusayfah, Mecca 24232 3157, Arabie saoudite</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-
-                            </ul>
-                            <p class="ml-20">348 avis</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="single-popular-course">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/kabayan.PNG" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">Kabayan Supermarket
-                            </p>
-
-                        </div>
-                        <a href="#">
-                            <h4>At Tilfizyun St, Ghulail, Jeddah 22413, Arabie saoudite</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="far fa-star"></i></a>
-                                </li>
-                            </ul>
-                            <p class="ml-20">379 avis</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-popular-course sghira">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/vegetables-4995737.jpg" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">Carrefour Market
-
-                            </p>
-
-                        </div>
-                        <a href="#">
-                            <h4>TAHLIA ROAD، Ar Rawdah, Jeddah 22425,
-                                <br> Arabie saoudite</h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="far fa-star"></i></a>
-                                </li>
-                            </ul>
-                            <p class="ml-20">1 267 avis</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-popular-course">
-                    <div class="thumb">
-                        <img class="f-img img-fluid mx-auto" src="img/supermarket-507295_1920.jpg" alt="" />
-                    </div>
-                    <div class="details">
-                        <div class="d-flex justify-content-between mb-20">
-                            <p class="name">Al Raya Supermarket
-
-
-                            </p>
-
-                        </div>
-                        <a href="#">
-                            <h4>Alqndeel, Aziziyah, Jeddah 23333,
-                                <br>Arabie saoudite <br>
-                            </h4>
-                        </a>
-                        <div class="bottom d-flex mt-15">
-                            <ul class="list">
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="far fa-star"></i></a>
-                                </li>
-                            </ul>
-                            <p class="ml-20">1 685 avis</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <% }%>
         </div>
+        </div>
+
     </section>
     <!-- ================ End of super marché ================= -->
 
@@ -842,6 +229,7 @@
     <script src="/js/jquery.nice-select.min.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/mainloisir.js">
+    <script src = "/js/A_loisir.js" ></script>
 
     </script>
 </body>

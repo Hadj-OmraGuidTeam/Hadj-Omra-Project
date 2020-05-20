@@ -71,7 +71,7 @@ app.get('/salat', (request, response) => {
 app.get('/forgot', (request, response) => {
   response.render('Home page/forgot-pass')
 })
-app.get('/A_loisir', (request, response) => {
+app.get('/A_loisir',redirectLogin, (request, response) => {
   response.render('UserPages/A_loisir')
 })
 //------------------------------------------------------------------------------
