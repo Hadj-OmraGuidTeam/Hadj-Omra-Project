@@ -27,7 +27,7 @@
                 </form>
               </div>
         <br></p>
-        <% if(question.idUserqst === userid) {%>
+        <% if(question.idUserqst === userid || userid === 45 || userid === 46 || userid === 46) {%>
         <a  class="card-link" type="submit" href="http://localhost:8080/question/delete/<%=question.id%>" value="Delete">Delete</a>
         <%}%>
         <a  class="card-link" type="submit" href="http://localhost:8080/question/answer/<%= question.id %>" value="answer" method="get">View answers</a>

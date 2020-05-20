@@ -152,7 +152,8 @@ upload(req,res,(err)=>{
                                     })
                                 }
                         })
-                            })
+                      })
+                      // /create table Agence(idA INT AUTO_INCREMENT PRIMARY KEY,nameA VARCHAR(44),pathA VARCHAR(255),dscA VARCHAR(255),prixA VARCHAR(255),avis VARCHAR(255));
                             router.post('/uploadA',(req,res)=>{
                                 uploadA(req,res,(err)=>{
                                     if(err){

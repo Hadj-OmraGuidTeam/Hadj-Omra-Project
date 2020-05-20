@@ -76,6 +76,7 @@ router.post('/register', async (req,res,next)=>{
 
           req.session.userId = rows[0].idUsers
           req.session.variabales={
+           id:rows[0].idUsers,
            name:rows[0].UserName,
            mail:rows[0].UserMail,
            country:rows[0].country,
@@ -135,10 +136,11 @@ router.post('/login',async (req,res,next)=>{
     mysqlConnection.query(sql, [user.mail2],async (err,rows,fields)=>{
       if (!err) {
         if ( (await bcrypt.compare(user.password2,rows[0].UserPassword)) || (user.password2 === rows[0].tokenKey) )
-         {  userid = rows[0].idUsers
+         {
             req.session.userId = rows[0].idUsers
             req.session.userName = rows[0].UserName
             req.session.variabales={
+             id:rows[0].idUsers,
              name:rows[0].UserName,
              mail:rows[0].UserMail,
              country:rows[0].country,
@@ -146,8 +148,10 @@ router.post('/login',async (req,res,next)=>{
              gender:rows[0].genre,
              Date:rows[0].date_naiss,
              image:rows[0].img
-           }
-            nameuser =  rows[0].UserName
+            }
+            if (rows[0].idUsers === 45 || rows[0].idUsers === 46 || rows[0].idUsers === 46){
+              res.redirect('/admin')
+            }
             console.log('User Id ==> ',req.session.userId);
             // res.render('UserPages/user',req.session.variabales)
             res.redirect('/user')
