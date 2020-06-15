@@ -108,9 +108,42 @@ router.post('/register', async (req,res,next)=>{
         console.log(err);
       }
     });
-  }catch{
+  }
+  catch{
     res.status(500).send(error.message)
   }
+
+});
+//--------------
+//Register for App Mobile
+//This methodes for generate a random string to our token for forgot password feature
+let token2 = Math.random().toString(36).substring(1);
+//Post login data (Add user in DB)
+router.post('/registerMob', async (req,res,next)=>{
+     try {
+
+
+       user=req.body
+       //const salt = await bcrypt.genSalt(10)
+       const hashedPassword = await bcrypt.hash(user.password, 10)
+       //Querry to insert new data in our users table
+       var sql =" INSERT INTO users (UserName,UserMail,UserPassword,tokenKey) VALUES ( ?,?,?,?)";
+       mysqlConnection.query(sql, [user.name,user.mail,hashedPassword,token2],(err,rows,fields)=>{
+          if (!err) {
+             console.log('Succes');
+             req.session.register= true;
+             console.log('Register is true');
+             res.end("Register Succes")
+          }
+          else {
+                console.log(err);
+                res.end(err.message)
+          }
+       });
+
+      } catch (e) {
+        res.status(500).send(e)
+      }
 
 });
 //--------------------------------------
@@ -166,6 +199,34 @@ router.post('/login',async (req,res,next)=>{
   } catch {
     res.status(500).send(error.message)
   }
+})
+//--------------
+// Login for mobile
+router.post('/loginMob',async (req,res,next)=>{
+  try {
+    const bcrypt = require('bcrypt')
+    user=req.body
+    var sql ="SELECT * from users WHERE UserMail = ? ";
+    mysqlConnection.query(sql, [user.mail2],async (err,rows,fields)=>{
+      if (!err) {
+        if ( (await bcrypt.compare(user.password2,rows[0].UserPassword)) || (user.password2 === rows[0].tokenKey) )
+         {
+
+            console.log('User Id ==> ',req.session.userId);
+            // res.render('UserPages/user',req.session.variabales)
+            // res.redirect('/user')
+            console.log({mail:user.mail2,
+                         psw:user.password2});
+                         res.end( "Login Success")
+          }
+         }
+      else {
+        console.log(err);
+        res.end(err.message)
+      }
+      });
+  } catch {
+    res.status(500).send(error.message)}
 })
 //----------------------------------
 //     Logout
