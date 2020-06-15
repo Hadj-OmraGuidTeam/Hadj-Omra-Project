@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="8dp"
+android:layout_marginBottom="15dp"
+    app:layout_constraintCircleRadius="20dp"
+    android:layout_height="wrap_content"
+    android:background="#80FFFFFF"
+   >
+
+    <TextView
+android:paddingRight="10dp"
+        android:id="@+id/IvListheader"
+        android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+
+
+
+
+        />
+</LinearLayout>

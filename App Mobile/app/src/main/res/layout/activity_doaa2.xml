@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".doaa2"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    >
+
+
+    <TextView
+        android:gravity="center"
+        android:background="@drawable/cccc"
+        android:layout_height="65dp"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+
+        android:layout_marginBottom="5dp"
+        android:autoText="false"
+
+        android:fontFamily="sans-serif-light"
+        android:text="أدعية من السنة"
+        android:textColor="@android:color/black"
+        android:textSize="32dp"
+        android:textStyle="normal|bold|italic"
+        />
+
+    <ListView
+        android:paddingTop="25dp"
+        android:id="@+id/Ivmont"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
