@@ -1,15 +1,10 @@
 //---------------Dependencies-----------------
 let express = require('express')
 let bodyParser = require('body-parser')
-let livereload = require('livereload')
-let connectLivereload = require('connect-livereload')
 let mysqlConnection= require('./config/config')
 //--------------------------------------------
 
-let app = express()
-var liveReloadServer = livereload.createServer()
-liveReloadServer.watch([__dirname +'./assets',__dirname +'./views/Home page'])
-
+// To Check if User are Login
 const redirectLogin =(req,res,next)=>{
   if (!req.session.userId){
     res.render('Home page/signup')
@@ -28,25 +23,81 @@ const redirectLogin =(req,res,next)=>{
 //   }
 // }
 
-//--------------------(middelware)-----------------------
+//------------------------(middelware)------------------------------------------
+// Create server
+let app = express()
+//For Body Parser to get variabales from HTML Pages
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-//this calling api.js which is contain sql commandes
+//this calling api.js which is contain sql commandes to CRUD and Auth operations
 app.use('/',require('./config/api'))
+//This calling Question.js which is contain sql commandes for Question and response operations
 app.use('/',require('./question'))
+//This for Admin to control Loisir
 app.use('/',require('./assets/js/A_loisir'))
 //this calling question.js which is contain sql comma
 app.use('/question',require('./question'))
 //this for calling the static files .js .css images
 app.use( express.static("./assets"))
-//Reload the pages
-app.use(connectLivereload())
-//--------------------------------------------------------
-
 //moteur de view
 app.set('view engine', 'ejs')
+//------------------------------------------------------------------------------
 
-//-------------(Routes for pages)------------------------
+//-----------------------(Notifications)----------------------------------------
+
+//Creating http instance
+const httpServer = require('http').createServer(app);
+//Creating socket io instance
+var io = require('socket.io')(httpServer);
+var users=[];
+    //Begin function
+    io.on("connection",function(socket){
+      console.log("User connected ", socket.id);
+
+      //Attach incoming listener for new users
+      socket.on("user_connected",function (username){
+        //save in Array
+        users[username] = socket.id;
+        console.log("User name  #######=> :",username);
+        console.log("List of Users connected  : ",users);
+        io.emit("user_connected",username)
+      })
+      //To Send Notification about New Question
+      socket.on("NewQst",function(message){
+        console.log("Sending a notification for the new question ... ");
+        socket.broadcast.to(users['admin']).emit("NewQst",message);
+      });
+      //To Send Notification about New Respense (To : Admin and The Owner of the qst)
+      socket.on("NewRes",function(message){
+        console.log("Sending a notification for the new response ... ");
+        socket.broadcast.to(users[message.To]).emit("NewRes",message);
+        socket.broadcast.to(users['admin']).emit("NewRes",message);
+      });
+    })
+
+    //Remove Disconnected User from Users List
+    // socket.on('disconnect',()=>{
+    //
+    //             for(let i=0; i < this.users.length; i++){
+    //
+    //                 if(this.users[i].id === socket.id){
+    //                     this.users.splice(i,1);
+    //                 }
+    //             }
+    //             socket.emit('exit',this.users);
+    //         });
+
+
+app.get('/Push', (request, response) => {
+  response.render('Push',{QstUserName:"Bellaouedj"})
+})
+app.get('/Push2', (request, response) => {
+  response.render('Push2')
+})
+
+//------------------------------------------------------------------------------
+
+//------------------------(Routes for pages)------------------------------------
 app.get('/', (request, response) => {
   response.render('Home page/index')
 })
@@ -139,6 +190,11 @@ app.post('/', (request, response) => {
 //----------------------------------------------------------------------
 
 //Listing to the server
-app.listen(8080, ()=>{
-  console.log('Server is running on port 8080...');
-})
+// //
+// app.listen(8080, ()=>{
+//   console.log('Server is running on port 8080...');
+// })
+// //
+httpServer.listen(8080, () => {
+  console.log('go to http://localhost:8080');
+});

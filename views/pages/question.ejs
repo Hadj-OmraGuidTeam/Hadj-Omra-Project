@@ -1,59 +1,83 @@
 <%-include ('header')-%>
-<style>.my-custom-scrollbar {
-  position: relative;
-  height: 900px;
-  overflow: auto;
-  }
-  .table-wrapper-scroll-y {
-  display: block;
-  }</style>
 
-<div class="table-wrapper-scroll-y my-custom-scrollbar">
-  <table class="table table-bordered table-striped mb-0">
-  <% for (question of question) {%>
-    <tr>
-    <div class="card  border-primary mb-3" style="width: 100%; margin: auto">
-      <div class="card-header">
-        <%= question.userNameQst %>
-      </div>
-      <div class="card-body">
-      <p class="card-text"> <div class="comment">
+  <style>.my-custom-scrollbar {
+    position: relative;
+    height: 900px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+      display: block;
+    }
+  </style>
 
-                <div class="content"> <%= question.content %></div>
+  <div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-bordered table-striped mb-0">
+      <% for (question of question) {%>
+        <tr>
+          <div class="card  border-primary mb-3" style="width: 100%; margin: auto">
+            <div class="card-header" id="QstUserName">
+              <%= question.userNameQst %>
+            </div>
+            <div class="card-body">
+              <p class="card-text"> <div class="comment">
+
+                  <div class="content"> <%= question.content %></div>
 
 
-                  <form action="http://localhost:8080/question/delete/<%=question.id%>" method="get" class=" ui for"></form>
+                    <form action="http://localhost:8080/question/delete/<%=question.id%>" method="get" class=" ui for"></form>
 
-                </form>
+                  </form>
+                </div>
+                <br></p>
+                <% if(question.idUserqst === userid || userid === 45 || userid === 46 || userid === 46) {%>
+                  <a  class="card-link" type="submit" href="http://localhost:8080/question/delete/<%=question.id%>" value="Delete">Delete</a>
+                  <%}%>
+                  <a  class="card-link" type="submit" href="http://localhost:8080/question/answer/<%= question.id %>" value="answer" method="get">View answers</a>
+                </div>
+                <div class="card-footer text-muted">
+                  <%= question.createdat %>
+                </div>
               </div>
-        <br></p>
-        <% if(question.idUserqst === userid || userid === 45 || userid === 46 || userid === 46) {%>
-        <a  class="card-link" type="submit" href="http://localhost:8080/question/delete/<%=question.id%>" value="Delete">Delete</a>
-        <%}%>
-        <a  class="card-link" type="submit" href="http://localhost:8080/question/answer/<%= question.id %>" value="answer" method="get">View answers</a>
-      </div>
-      <div class="card-footer text-muted">
-        <%= question.createdat %>
-      </div>
-    </div>
-    </tr>
-    <% }%>
-    </div>
-  </table>
-</div>
+            </tr>
+            <% }%>
+          </div>
+          </table>
+        </div>
 
-<div class="container" style="width: 100%;
-justify-content: center;
-align-items: center">
-<form action="http://localhost:8080/question/question" method="post" class=" ui for">
-  <div class="field">
-      <label for="message">Add your question</label>
-      <textarea class="form-control" name="message" id="message"  rows="3"></textarea>
-      <input type="submit" name="Submit" value="Submit" class="btn btn-primary" class="cs3_save">
-  </div>
-</form>
-</div>
+        <div class="container" style="width: 100% justify-content: center align-items: center">
+          <form action="http://localhost:8080/question/question" method="post" class=" ui for">
+            <div class="field">
+              <label for="message">Add your question </label>
+              <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+              <input   type="submit"  name="Submit" value="Submit"  class="btn btn-primary" class="cs3_save" onclick="sendMessage()" >
+            </div>
+          </form>
+        </div>
 
+        <script src="/socket.io/socket.io.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.js"></script>
 
+           <script type="text/javascript">
+           // Function will be called when user add new qst 
+            function sendMessage(){
+              io.emit("NewQst",{
+                "Name" : "<%= name %> ",
+                "Subject" : "New question ",
+                "Message"  : "I had a new question here"
+              })
+              return false;
+            }
+            //Get the message from server and send notification
+            io.on ("NewQst", function(message) {
+                console.log(message);
+                $.notify("New Message\n" + message.Message + "\n\nFrom  :" + message.Name,{
+                  autoHide :false,
+                  className : "success"
+                });
+            })
+            </script>
 
 <%-include ('footer')-%>

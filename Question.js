@@ -3,7 +3,8 @@ var mysqlConnection=require('./config/config');
 var  flash= require('connect-flash');
 const bodyparser=require('body-parser')
 const session = require('express-session');
-
+var io = require('socket.io');
+let app = express()
 let router = express.Router();
 
 //middleware
@@ -35,10 +36,8 @@ router.post('/question',redirectLogin,(request,response)=>{
           if (err) {
             return console.error(err.message);
           }
-
           console.log('Todo Id:' + results.insertId);
-
-         response.redirect('question')
+          response.redirect('question')
       });
 
 })
@@ -51,7 +50,7 @@ router.get('/question',(request,response)=>{
           throw error;
       }
     console.log('this is the name ===> ',request.session.userId,results[0].idUserqst );
-    response.render('pages/question',{question:results,userid: request.session.userId})
+    response.render('pages/question',{name:request.session.userName,question:results,userid: request.session.userId})
 
   });})
 
@@ -107,7 +106,8 @@ router.get('/answer/:id',(request,response)=>{
   var v=[];
   for(var i=0;i<results.length;i++){v[i]=results[i]}
   if(results.length!==0)
-   response.render('answer/answer',{question:results[0],answer:v})
+      response.render('answer/answer',{name:request.session.userName,question:results[0],answer:v})
+
 
 
                                                            })

@@ -392,10 +392,14 @@ router.get('/',(request,response)=>{
           throw error;
       }
 
-      response.render('Home page/index',{comment:results})
+      response.render('Home page/index',{
+        name: request.session.variabales.name,
+        comment:results
+      })
 
   });})
 //------------Afficher la derniere question User session------------------------
+//------------Send variabales to the pages User---------------------------------
   router.get('/user',redirectLogin,(request,response)=>{
     var sql = "SELECT * FROM message ORDER BY id DESC LIMIT 1";
     var message=request.body.message;
@@ -403,7 +407,12 @@ router.get('/',(request,response)=>{
         if (error) {
             throw error;
         }
+        //=====Notification :
+        // var io = require('socket.io')
+        // var socket = io("http://192.168.1.33:8080");
+        // socket.emit("username",request.session.variabales.name)
 
+        //===================
         response.render('UserPages/user',{
           name: request.session.variabales.name,
           mail:request.session.variabales.mail,
@@ -424,6 +433,7 @@ router.get('/',(request,response)=>{
 router.get('/admin',redirectLogin,(request,response)=>{
   var data1=[];
   var data2=[];
+  var listnotifs= [1,2,3,4]
   if (request.session.userId === 45 || request.session.userId === 46 || request.session.userId === 47 )
   {var sql = "SELECT Count(status) as valeur FROM users where status='Omra'";
   mysqlConnection.query(sql, function(error, results) {
@@ -456,7 +466,12 @@ router.get('/admin',redirectLogin,(request,response)=>{
                   }
 
                   data2.push({label:'Femme',value:results[0].valeur})
-                  response.render('Admin Pages/admin',{output1:data1,output2:data2})
+                  response.render('Admin Pages/admin',{
+                    name: request.session.variabales.name,
+                    output1:data1,
+                    output2:data2,
+                    notifs:listnotifs
+                  })
               })
           })
 

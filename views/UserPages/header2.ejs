@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="/css/met.css">
     <link rel="stylesheet" href="/css/map.css">
     <script src="/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
     <!-----------------------  Script For GPS ------------------------------------>
     <script
         src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=An-DQwMckibyuZ0q93OLo5kSNITR6VevW6-zy4NGjlLPGxMLljye2k7SZHXRF1oU'
@@ -237,3 +238,13 @@
                 <!-- End of Topbar -->
             </div>
             <!-- End of Main Content -->
+            <script type="text/javascript">
+            //Get the message from server and send notification
+            io.on ("NewQst", function(message) {
+                console.log(message);
+                $.notify("New Message\n" + message.Message + "\n\nFrom  :" + message.Name,{
+                  autoHide :false,
+                  className : "success"
+                });
+            })
+            </script>
