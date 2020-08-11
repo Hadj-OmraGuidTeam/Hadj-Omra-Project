@@ -393,7 +393,6 @@ router.get('/',(request,response)=>{
       }
 
       response.render('Home page/index',{
-        name: request.session.variabales.name,
         comment:results
       })
 
