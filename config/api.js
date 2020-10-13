@@ -5,6 +5,8 @@ const session = require('express-session')
 const bcrypt = require('bcrypt')
 const sgMail = require('@sendgrid/mail');
 let mysqlConnection= require('./config')
+const path = require('path');
+const multer = require('multer');
 //-----------------------------------------------------------------------
 
 //-------------------------(middelware)------------------------------------
@@ -30,6 +32,19 @@ const redirectLogin =(req,res,next)=>{
     next()
   }
 }
+
+//set storage engine
+const storage=multer.diskStorage({
+    destination:'/uploads',
+    filename:function(req,file,cb){
+        cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+})
+//Init upload
+//-----------upload resturant's images----------------//
+const upload=multer({
+    storage:storage
+}).single('image');
 //---------------------------------------------------------------
 
 //-------------(Send mail:forgot password)-------------
@@ -310,7 +325,7 @@ router.post('/forum',redirectLogin,(request, response) => {
             infos.Date=rows[0].date_naiss
           }
           if (infos.image==''){
-            infos.image=rows[0].img
+            infos.image=rows[0].file.filename
           }
 
           // This querry for update date in our db

@@ -39,8 +39,9 @@ app.use('/',require('./assets/js/A_loisir'))
 app.use('/question',require('./question'))
 //this for calling the static files .js .css images
 app.use( express.static("./assets"))
+app.use( "UserPages/loisir",express.static("./assets"))
 
-// app.use(express.static(__dirname+"/public"))
+app.use(express.static(__dirname+"/public"))
 //moteur de view
 app.set('view engine', 'ejs')
 //------------------------------------------------------------------------------

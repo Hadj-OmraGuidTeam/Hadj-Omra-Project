@@ -41,7 +41,7 @@
                     <% if(loisir[i].nameH) {%>
                 <div class="row">
                     <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="hotel-room text-center"><a href="#" class="d-block mb-0 thumbnail"><img src="uploads/<%= loisir[i].pathH %>" alt="Image"
+                        <div class="hotel-room text-center"><a href="#" class="d-block mb-0 thumbnail"><img src="/uploads/<%= loisir[i].pathH %>" alt="Image"
                             class="img-fluid" style="height: 241px;"></a>
 
 
@@ -179,7 +179,7 @@
 
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="hotel-room text-center">
-                            <a href="#" class="d-block mb-0 thumbnail"><img src="/img/img_4.jpg" alt="Image"
+                            <a href="#" class="d-block mb-0 thumbnail"><img src="/img/hotel9.png" alt="Image"
                                     class="img-fluid"></a>
                             <div class="hotel-room-body">
                                 <h3 class="heading mb-0"><a href="#"> Suite Inn Hotel</a></h3>
@@ -284,27 +284,27 @@
                 <div class="row">
                   <!-- ------------------ Infos Dynamic ----------------------------->
 
-                  <% for (var i=0;i< loisir.length;i++) {%>
-                      <% if(loisir[i].nameP !=="") {%>
-                  <div class="col-md-6 col-lg-4 mb-5">
-                      <div class="hotel-room text-center">
-                          <a href="#" class="d-block mb-0 thumbnail"><img src="/uploads/<%= loisir[i].pathA%>" alt="Image"
-                                  class="img-fluid"></a>
-                          <h2 class="prix"><%= loisir[i].prixA %></h2>
-                          <div class="hotel-room-body">
-                              <h3 class="heading mb-0"><a href="#">Vols de Alger à Arabie saoudite</a></h3>
-                              <strong class="price"><%= loisir[i].dscA %></strong>
-                          </div>
-                      </div>
-                  </div>
-                  <%}%>
+                                    <% for (var i=0;i< loisir.length;i++) {%>
+                                        <% if(loisir[i].nameP !=="") {%>
+                                    <!-- <div class="col-md-6 col-lg-4 mb-5">
+                                        <div class="hotel-room text-center">
+                                            <a href="#" class="d-block mb-0 thumbnail"><img src="/uploads/<%= loisir[i].pathA%>" alt="Image"
+                                                    class="img-fluid"></a>
+                                            <h2 class="prix"><%= loisir[i].prixA %></h2>
+                                            <div class="hotel-room-body">
+                                                <h3 class="heading mb-0"><a href="#">Vols de Alger à Arabie saoudite</a></h3>
+                                                <strong class="price"><%= loisir[i].dscA %></strong>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <%}%>
 
-                  <% }%>
+                                    <% }%>
 
                   <!-- ------------------ Infos Static ------------------------------>
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="hotel-room text-center">
-                            <a href="#" class="d-block mb-0 thumbnail"><img src="/img/jeddah4.jpg" alt="Image"
+                            <a href="#" class="d-block mb-0 thumbnail"><img src="/img/jeddah2.jpg" alt="Image"
                                     class="img-fluid"></a>
                             <h2 class="prix">89,307 DZD</h2>
                             <div class="hotel-room-body">

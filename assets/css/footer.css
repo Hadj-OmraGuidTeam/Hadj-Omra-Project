@@ -65,7 +65,7 @@ ul.social_iconf li a:hover {
 }
 
 .copyrightf {
-     padding: 20px 0px;
+     padding: 24px 0px;
      background: #0891f8;
      margin-top: 50px;
      position: relative;
@@ -108,4 +108,16 @@ ul.social_iconf li a:hover {
     position: relative;
     top: 365px;
     left: 896.4PX;
+}
+.rowf img {
+    position: relative;
+    top: 394px;
+    left: 884.4PX;
+}
+}
+.copyrightf {
+    padding: 25px 0px;
+    background: #0891f8;
+    margin-top: 81px;
+    position: relative;
 }
