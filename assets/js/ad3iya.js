@@ -24,6 +24,7 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
+/*
 $(function() {
     $('.translate').click(function() {
       var lang = $(this).attr('id');
@@ -36,7 +37,7 @@ $(function() {
     {
       $("html").children().css("direction","ltr");
     }*/
-        $(this).text(arrLang[lang][$(this).attr('key')]);
+/*        $(this).text(arrLang[lang][$(this).attr('key')]);
       });
     });
   });
@@ -258,3 +259,4 @@ moi.
 "
  }
  };
+*/

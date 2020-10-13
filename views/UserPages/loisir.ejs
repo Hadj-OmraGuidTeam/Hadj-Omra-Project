@@ -34,6 +34,51 @@
                 </div>
             </div>
             <div class="owl-carousel popuar-course-carusel">
+              <!-- -----------------------Infos Dynamic ------------------------------------>
+
+              <% for (var i=0;i< loisir.length;i++) {%>
+                  <% if(loisir[i].name !=="") {%>
+              <div class="single-popular-course">
+                  <div class="thumb">
+                      <img class="f-img img-fluid mx-auto" src="uploads/<%= loisir[i].path%>" alt="" />
+                  </div>
+                  <div class="details">
+                      <div class="d-flex justify-content-between mb-20">
+                          <p class="name" style="font-family: 'Almarai', sans-serif;"><%= loisir[i].name %>
+                          </p>
+                          <p class="value">$150</p>
+                      </div>
+                      <a href="#">
+                          <h4><%= loisir[i].dsc %></h4>
+                      </a>
+                      <div class="bottom d-flex mt-15">
+                          <ul class="list">
+                              <li>
+                                  <a href="#"><i class="fa fa-star"></i></a>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="fa fa-star"></i></a>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="fa fa-star"></i></a>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="fa fa-star"></i></a>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="far fa-star"></i></a>
+                              </li>
+                          </ul>
+
+                          <p class="ml-20">563 avis </p>
+                      </div>
+                  </div>
+              </div>
+              <%}%>
+
+              <% }%>
+
+              <!--  ----------------------Infos Static ------------------------------------>
                 <div class="single-popular-course">
                     <div class="thumb">
                         <img class="f-img img-fluid mx-auto" src="img/loisir1.jpg" alt="" />
@@ -276,6 +321,51 @@
                 </div>
             </div>
             <div class="owl-carousel popuar-course-carusel">
+              <!-- -----------------------Infos Dynamic ------------------------------------>
+
+              <% for (var i=0;i< loisir.length;i++) {%>
+                  <% if(loisir[i].nameP !=="") {%>
+              <div class="single-popular-course">
+                  <div class="thumb">
+                      <img class="f-img img-fluid mx-auto" src="uploads/<%= loisir[i].pathP%>" alt="" />
+                  </div>
+                  <div class="details">
+                      <div class="d-flex justify-content-between mb-20">
+                          <p class="name" style="font-family: 'Almarai', sans-serif;"><%= loisir[i].nameP %>
+                          </p>
+                          <p class="value">$150</p>
+                      </div>
+                      <a href="#">
+                          <h4><%= loisir[i].dscP %></h4>
+                      </a>
+                      <div class="bottom d-flex mt-15">
+                          <ul class="list">
+                              <li>
+                                  <a href="#"><i class="fa fa-star"></i></a>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="fa fa-star"></i></a>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="fa fa-star"></i></a>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="fa fa-star"></i></a>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="far fa-star"></i></a>
+                              </li>
+                          </ul>
+
+                          <p class="ml-20">563 avis </p>
+                      </div>
+                  </div>
+              </div>
+              <%}%>
+
+              <% }%>
+
+              <!--  ----------------------Infos Static ------------------------------------>
                 <div class="single-popular-course">
                     <div class="thumb">
                         <img class="f-img img-fluid mx-auto" src="img/haram.jpg" alt="" />
@@ -600,6 +690,51 @@
                 </div>
             </div>
             <div class="owl-carousel popuar-course-carusel">
+              <!-- -----------------------Infos Dynamic ------------------------------------>
+
+              <% for (var i=0;i< loisir.length;i++) {%>
+                  <% if(loisir[i].nameM !=="") {%>
+              <div class="single-popular-course">
+                  <div class="thumb">
+                      <img class="f-img img-fluid mx-auto" src="uploads/<%= loisir[i].pathM%>" alt="" />
+                  </div>
+                  <div class="details">
+                      <div class="d-flex justify-content-between mb-20">
+                          <p class="name" style="font-family: 'Almarai', sans-serif;"><%= loisir[i].nameM %>
+                          </p>
+                          <p class="value">$150</p>
+                      </div>
+                      <a href="#">
+                          <h4><%= loisir[i].dscM %></h4>
+                      </a>
+                      <div class="bottom d-flex mt-15">
+                          <ul class="list">
+                              <li>
+                                  <a href="#"><i class="fa fa-star"></i></a>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="fa fa-star"></i></a>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="fa fa-star"></i></a>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="fa fa-star"></i></a>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="far fa-star"></i></a>
+                              </li>
+                          </ul>
+
+                          <p class="ml-20">563 avis </p>
+                      </div>
+                  </div>
+              </div>
+              <%}%>
+
+              <% }%>
+
+              <!--  ----------------------Infos Static ------------------------------------>
                 <div class="single-popular-course">
                     <div class="thumb">
                         <img class="f-img img-fluid mx-auto" src="img/marché1.jpg" alt="" />
@@ -845,6 +980,23 @@
     <script src="/js/jquery.nice-select.min.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/mainloisir.js">
+    <script src = "/js/A_loisir.js" ></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="/js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.counterup.min.js"></script>
+    <script src="/js/jquery.nice-select.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/mainloisir.js">
+    <script src = "/js/A_loisir.js" ></script>
 
     </script>
 </body>

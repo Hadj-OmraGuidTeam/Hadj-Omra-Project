@@ -39,6 +39,8 @@ app.use('/',require('./assets/js/A_loisir'))
 app.use('/question',require('./question'))
 //this for calling the static files .js .css images
 app.use( express.static("./assets"))
+
+// app.use(express.static(__dirname+"/public"))
 //moteur de view
 app.set('view engine', 'ejs')
 //------------------------------------------------------------------------------
@@ -158,12 +160,21 @@ app.get('/user/ad3iya',redirectLogin, (request, response) => {
 app.get('/user/salat',redirectLogin, (request, response) => {
   response.render('UserPages/salat',request.session.variabales)
 })
-app.get('/user/loisir',redirectLogin, (request, response) => {
-  response.render('UserPages/loisir',request.session.variabales)
-})
-app.get('/user/loisir2',redirectLogin, (request, response) => {
-  response.render('UserPages/loisir2',request.session.variabales)
-})
+// app.get('/user/loisir',redirectLogin, (request, response) => {
+//   mysqlConnection.query('select * from place INNER JOIN marchet on place.idP left JOIN resturant on marchet.idM',(err,results)=>{
+//       if (err) {
+//           throw err;
+//       }
+//       response.render('UserPages/loisir',{loisir:results},request.session.variabales)
+//   })
+//   // response.render('UserPages/loisir',request.session.variabales)
+// })
+// app.get('/user/loisir2',redirectLogin, (request, response) => {
+//   //=========
+//
+//
+//
+// })
 app.get('/user/hadj-ifrad',redirectLogin, (request, response) => {
   response.render('UserPages/hadj-ifrad',request.session.variabales)
 })
@@ -178,6 +189,9 @@ app.get('/form',redirectLogin,(request, response) => {
 })
 app.get('/admin',(request, response) => {
   response.render('Admin Pages/admin',request.session.variabales)
+})
+app.get('/user/contact',redirectLogin, (request, response) => {
+  response.render('UserPages/user',request.session.variabales)
 })
 //------------------------------------------------------------------------------
 

@@ -352,13 +352,15 @@ router.post('/user/contact',redirectLogin, async(request, response) => {
            text:contact.message,
            html:contact.message,
          }).then(() => {
-              console.log('Message sent')
+              console.log('Message sent');
+
          }).catch((error) => {
             console.log(error.response.body)
            // console.log(error.response.body.errors[0].message)
         })
         console.log("after sending Mail");
         // response.redirect('/user')
+        response.rediret('user/contact')
 
 })
 // ---------------------------------
@@ -427,6 +429,45 @@ router.get('/',(request,response)=>{
 
     });})
 // -------------------------------------------------------------------------------
+
+//--------------------( Loisir User Section )-------------------------------------
+router.get('/user/loisir',redirectLogin, (request, response) => {
+  mysqlConnection.query('select * from place INNER JOIN marchet on place.idP left JOIN resturant on marchet.idM',(err,results)=>{
+      if (err) {
+          throw err;
+      }
+      response.render('UserPages/loisir',{
+        loisir:results,
+        id:request.session.variabales.userId,
+        name: request.session.variabales.name,
+        mail:request.session.variabales.mail,
+        country:request.session.variabales.country,
+        status:request.session.variabales.status,
+        gender:request.session.variabales.gender,
+        date:request.session.variabales.Date,
+        image:request.session.variabales.image,
+        register:request.session.register,})
+  })
+})
+router.get('/user/loisir2',redirectLogin, (request, response) => {
+mysqlConnection.query('SELECT * FROM hotel right join agence ON hotel.idH>0 UNION SELECT * FROM hotel left join agence ON hotel.idH>0',(err,results)=>{
+    if (err) {
+        throw err;
+    }
+    response.render('UserPages/loisir2',{
+       loisir:results,
+       id:request.session.userId,
+       name: request.session.variabales.name,
+       mail:request.session.variabales.mail,
+       country:request.session.variabales.country,
+       status:request.session.variabales.status,
+       gender:request.session.variabales.gender,
+       date:request.session.variabales.Date,
+       image:request.session.variabales.image,
+       register:request.session.register,})
+})
+})
+//--------------------------------------------------------------------------------
 
 //------------------------(Session Admin)----------------------------------------
 router.get('/admin',redirectLogin,(request,response)=>{

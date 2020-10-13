@@ -110,7 +110,7 @@ $(".hover").mouseleave(
 );
 
 //Traduction
-$(function() {
+/*$(function() {
     $('.translate').click(function() {
       var lang = $(this).attr('id');
 
@@ -122,7 +122,7 @@ $(function() {
     {
       $("html").children().css("direction","ltr");
     }*/
-        $(this).text(arrLang[lang][$(this).attr('key')]);
+/*        $(this).text(arrLang[lang][$(this).attr('key')]);
       });
     });
   });
@@ -306,5 +306,4 @@ SALLAM.»",
      tf17:"«BISMILLAH, ALLAHOU AKBAR»",
      tf18:"«RABANA ATINAFI DOUNYA HASSANAH, WA FI-L-AKHIRATI HASSANAH, WA QINA ADHABAN-NAR»",
      tf19:""
-   }
- };
+   }*/

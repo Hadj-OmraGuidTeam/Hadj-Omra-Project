@@ -104,9 +104,9 @@ alert('message sent')
             return false;
         }
 
-        this_form.find('.sent-message').slideUp();
-        this_form.find('.error-message').slideUp();
-        this_form.find('.loading').slideDown();
+        //this_form.find('.sent-message').slideUp();
+        //this_form.find('.error-message').slideUp();
+      //  this_form.find('.loading').slideDown();
 
         $.ajax({
             type: "POST",
@@ -115,11 +115,11 @@ alert('message sent')
             success: function (msg) {
                 if (msg == 'OK') {
 
-                    this_form.find('.loading').slideUp();
+                    //this_form.find('.loading').slideUp();
                     this_form.find('.sent-message').slideDown();
                     this_form.find("input:not(input[type=submit]), textarea").val('');
                 } else {
-                    this_form.find('.loading').slideUp();
+                    //this_form.find('.loading').slideUp();
                     this_form.find('.error-message').slideDown().html(msg);
                 }
             }
