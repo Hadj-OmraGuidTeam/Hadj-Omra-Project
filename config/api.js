@@ -75,7 +75,7 @@ router.post('/register', async (req,res,next)=>{
     const hashedPassword = await bcrypt.hash(user.password, 10)
     //Querry to insert new data in our users table
     var sql =" INSERT INTO users (UserName,UserMail,UserPassword,tokenKey) VALUES ( ?,?,?,?)";
-    mysqlConnection.query(sql, [user.name,user.mail,hashedPassword,token],(err,rows,fields)=>{
+    await mysqlConnection.query(sql, [user.name,user.mail,hashedPassword,token],(err,rows,fields)=>{
       if (!err) {
         console.log('Succes');
         req.session.register= true;
@@ -116,7 +116,6 @@ router.post('/register', async (req,res,next)=>{
           nameuser =  rows[0].UserName
           console.log('User Id ==> ',req.session.userId);
           res.send('Check Your Box')
-          res.end()
           //next();
          }
       else {
@@ -137,18 +136,20 @@ let token2 = Math.random().toString(36).substring(1);
 router.post('/registerMob', async (req,res,next)=>{
      try {
 
-
        user=req.body
        //const salt = await bcrypt.genSalt(10)
        const hashedPassword = await bcrypt.hash(user.password, 10)
        //Querry to insert new data in our users table
        var sql =" INSERT INTO users (UserName,UserMail,UserPassword,tokenKey) VALUES ( ?,?,?,?)";
        mysqlConnection.query(sql, [user.name,user.mail,hashedPassword,token2],(err,rows,fields)=>{
+          console.log('wasslet')
           if (!err) {
              console.log('Succes');
              req.session.register= true;
              console.log('Register is true');
-             res.end("Register Succes")
+             return res.send("Register Succes")
+             // res.status(200).json({message :"test"})
+
           }
           else {
                 console.log(err);
@@ -219,20 +220,23 @@ router.post('/login',async (req,res,next)=>{
 // Login for mobile
 router.post('/loginMob',async (req,res,next)=>{
   try {
-    const bcrypt = require('bcrypt')
+     const bcrypt = require('bcrypt')
+    console.log(req);
     user=req.body
+    console.log(user);
     var sql ="SELECT * from users WHERE UserMail = ? ";
-    mysqlConnection.query(sql, [user.mail2],async (err,rows,fields)=>{
+    mysqlConnection.query(sql, [user.mail],async (err,rows,fields)=>{
       if (!err) {
-        if ( (await bcrypt.compare(user.password2,rows[0].UserPassword)) || (user.password2 === rows[0].tokenKey) )
+        if ( (await bcrypt.compare(user.UserPassword,rows[0].UserPassword)) || (user.UserPassword === rows[0].tokenKey) )
          {
 
-            console.log('User Id ==> ',req.session.userId);
+            // console.log('User Id ==> ',req.session.userId);
             // res.render('UserPages/user',req.session.variabales)
             // res.redirect('/user')
-            console.log({mail:user.mail2,
-                         psw:user.password2});
-                         res.end( "Login Success")
+            // console.log({mail:user.mail2,
+            //              psw:user.password2});
+
+                      return   res.send( "Login Success")
           }
          }
       else {

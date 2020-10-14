@@ -10,7 +10,6 @@
                 background-color:#bdbdbd;
                 color: white;
               }
-
               .closebtn {
                 margin-left: 15px;
                 color: white;
@@ -21,7 +20,6 @@
                 cursor: pointer;
                 transition: 0.3s;
               }
-
               .closebtn:hover {
                 color: black;
               }
@@ -38,7 +36,6 @@
                     <a class="btn btn-primary" href="http://localhost:8080/form">Form</a>
                 </div>
               </div>
-
            <%}%>
 
             <section class="section-1" id="section-1">
@@ -147,8 +144,7 @@
                                           <div class="content">
                                               <h2>Restaurant</h2>
                                               <p>
-                                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                  eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                  Voici quelque restaurant.
                                               </p>
                                               <a href="http://localhost:8080/user/loisir">Read More</a>
                                           </div>
@@ -160,8 +156,7 @@
                                           <div class="content">
                                               <h2>Places</h2>
                                               <p>
-                                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                  eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                quelque places a visité  .
                                               </p>
                                               <a href="http://localhost:8080/user/loisir">Read More</a>
                                           </div>
@@ -173,8 +168,7 @@
                                           <div class="content">
                                               <h2>Hotels</h2>
                                               <p>
-                                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                                                  eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                                  quelque hotels.
                                               </p>
                                               <a href="http://localhost:8080/user/loisir2">Read More</a>
                                           </div>
@@ -224,22 +218,15 @@
                   <!-----------
                             <section id="app"></section>
                             <br>
-
                             <i class="wi" id="cc"></i>
                             <h2> <i class="wi wi-thermometer"></i>
                               <span id="temperature"></span> C°
                               <br> <span id="conditions">
-
                                 <div class="container">
                                   <div class="text"></div>
                                 </div>
-
                               </span>
-
-
                             </h2>
-
-
                             <h1> <span id="ville"></span> </h1>
                             <br><br> --->
                   <!---------end weather warda---->
@@ -514,7 +501,7 @@
            io.on("user_connected", function (username){
              console.log("User Name :"+username);
            })
-         //Get the message from server and send notification 
+         //Get the message from server and send notification
            io.on ("NewRes", function(message) {
                console.log(message);
                $.notify("New Message\n" + message.Message + "\n\nFrom  :" + message.Name,{

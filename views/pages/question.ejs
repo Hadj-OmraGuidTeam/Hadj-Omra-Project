@@ -1,14 +1,5 @@
 <%-include ('header')-%>
 
-  <style>.my-custom-scrollbar {
-    position: relative;
-    height: 900px;
-    overflow: auto;
-    }
-    .table-wrapper-scroll-y {
-      display: block;
-    }
-  </style>
 
   <div class="table-wrapper-scroll-y my-custom-scrollbar">
     <table class="table table-bordered table-striped mb-0">
@@ -61,7 +52,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.js"></script>
 
            <script type="text/javascript">
-           // Function will be called when user add new qst 
+           // Function will be called when user add new qst
             function sendMessage(){
               io.emit("NewQst",{
                 "Name" : "<%= name %> ",
