@@ -109,9 +109,15 @@ I/Web:
 4/Go to your Browser and write this:
  localhost:8080
 
-II/ Mobile App
+II/ Mobile App:
+
+
  -Modify the ip addr in the following classes: Login, Register, RetrofitClient, FormActivity.
+
  -Connect in a local network (Share the cnx with the phone that you want to run the application with).
+
  -Activate debug mode in your phone.
+
  -If there is an error of type "java.lang.OutOfMemoryError: Failed to allocate" => implies that you cannot use the app in this phone.
+
  -The Gps API most likely it won't work because isn't a free API.
