@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
+
+        <ImageView
+            android:layout_width="46dp"
+            android:id="@+id/image"
+            android:layout_height="40dp"
+            android:src="@drawable/user" />
+        <TextView
+            android:id="@+id/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/image"
+            android:textSize="20sp"
+            android:text="Norene Filali"
+            android:fontFamily="monospace"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:paddingStart="20dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="true"
+
+            android:text="9 hours ago"
+            android:paddingLeft="20dp"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingLeft="20dp"
+        android:text="Hello"
+        android:id="@+id/comment"
+        android:layout_gravity="center"
+        android:textSize="17sp"
+        android:textStyle="normal" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="30dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/reply"
+            android:id="@+id/reply"
+            android:layout_marginLeft="30dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:text="60"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/reply"
+
+            />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/like"
+            android:src="@drawable/like" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:id="@+id/likes"
+            android:text="60"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/like"
+
+            />
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,4 @@
+#Tue Jun 09 00:26:16 WAT 2020
+base.0=C\:\\Users\\ibell\\Desktop\\done\\app\\build\\intermediates\\dex\\release\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

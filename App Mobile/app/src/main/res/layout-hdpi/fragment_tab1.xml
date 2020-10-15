@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D5DBFF"
+    tools:context=".tab1">
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" حج الافراد"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        />
+    <LinearLayout
+       android:layout_marginTop="15dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:layout_gravity="top"
+
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+
+        >
+
+
+        //1er line
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+
+            >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                 android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="0dp"
+                        android:text="وهو أن ينوي المسلم عند إحرامه أداء مناسك الحج فقط، ويقول:لبيك بحج ، ثمَّ يصل إلى مكة ويؤدي مناسك الحج ثمَّ يحرم بنية العمرة ويؤدي مناسكها، وهو الحج الأفضل عند الشافعية والمالكية، وفيما يأتي من فقرات هذا المقال سيتم الحديث عن الحج المفرد وشروطه بالتفصيل."
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+
+                        />
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            //2eme colonne
+            //pas la peinne
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+    <ScrollView
+
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="230dp"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        >
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="280dp">
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_height="280dp">
+
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="280dp"
+                    android:layout_marginBottom="270dp"
+                    android:orientation="horizontal"
+
+                    >
+
+                    <androidx.cardview.widget.CardView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+
+                        <RelativeLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            >
+                            <ImageView
+                                android:layout_marginTop="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:src="@drawable/ihram2"
+                                android:id="@+id/i1"/>
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/i1"
+                                android:layout_marginLeft="100dp"
+                                android:textStyle="bold"
+                                android:text="1 الإحرام "
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="0dp"
+                                android:textColor="#000000"
+                                android:textSize="16sp"
+
+                                />
+
+                            <Button
+
+                                android:id="@+id/b1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent" />
+
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                    //2eme colonne
+                    //pas la peinne
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="280dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+
+                    >
+
+                    <androidx.cardview.widget.CardView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+
+                        <RelativeLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            >
+                            <ImageView
+                                android:layout_marginTop="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:src="@drawable/tawaf2"
+                                android:id="@+id/i2"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/i2"
+                                android:layout_marginLeft="90dp"
+                                android:textStyle="bold"
+                                android:text="2الطواف"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="0dp"
+                                android:textColor="#000000"
+                                android:textSize="16sp"
+
+                                />
+
+                            <Button
+
+                                android:id="@+id/b2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                    //2eme colonne
+                    //pas la peinne
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="280dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+
+                    >
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_marginRight="5dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+
+                        <RelativeLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            >
+                            <ImageView
+                                android:layout_marginTop="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:src="@drawable/makam"
+                                android:id="@+id/i3"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/i3"
+                                android:layout_marginLeft="90dp"
+                                android:textStyle="bold"
+                                android:text="3 مقام ابراهيم"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="0dp"
+                                android:textColor="#000000"
+                                android:textSize="16sp"
+
+                                />
+                            <Button
+
+                                android:id="@+id/b3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                    //2eme colonne
+                    //pas la peinne
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="280dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+
+                    >
+
+                    <androidx.cardview.widget.CardView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+
+                        <RelativeLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            >
+                            <ImageView
+                                android:layout_marginTop="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:src="@drawable/zamzem"
+                                android:id="@+id/i4"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/i4"
+                                android:layout_marginLeft="90dp"
+                                android:textStyle="bold"
+                                android:text=" -4 ماء زمزم"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="0dp"
+                                android:textColor="#000000"
+                                android:textSize="16sp"
+
+                                />
+                            <Button
+
+                                android:id="@+id/b4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                    //2eme colonne
+                    //pas la peinne
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="280dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+
+                    >
+
+                    <androidx.cardview.widget.CardView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+
+                        <RelativeLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            >
+                            <ImageView
+                                android:layout_marginTop="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:src="@drawable/safaa"
+                                android:id="@+id/i5"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/i5"
+                                android:layout_marginLeft="90dp"
+                                android:textStyle="bold"
+                                android:text=" 5- سعي بين الصفى و المروى"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="0dp"
+                                android:textColor="#000000"
+                                android:textSize="16sp"
+
+                                />
+                            <Button
+
+                                android:id="@+id/b5"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                    //2eme colonne
+                    //pas la peinne
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="280dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal"
+
+                    >
+
+                    <androidx.cardview.widget.CardView
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+
+                        <RelativeLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            >
+                            <ImageView
+                                android:layout_marginTop="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="170dp"
+                                android:src="@drawable/hadj9"
+                                android:id="@+id/i7"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/i7"
+                                android:layout_marginLeft="90dp"
+                                android:textStyle="bold"
+                                android:text="6 البقاء في مكة "
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="0dp"
+                                android:textColor="#000000"
+                                android:textSize="16sp"
+
+                                />
+
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                    //2eme colonne
+                    //pas la peinne
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="95dp"
+        android:layout_gravity="left|center"
+        android:src="@drawable/ic_chevron_left_black_24dp" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="95dp"
+        android:layout_gravity="right|center"
+        android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+
+
+
+
+
+
+
+
+</FrameLayout>

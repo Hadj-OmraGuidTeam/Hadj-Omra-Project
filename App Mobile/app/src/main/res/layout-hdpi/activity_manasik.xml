@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hadj3"
+
+    tools:context=".manasik">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="170dp"
+
+        android:orientation="horizontal"
+
+
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+
+
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:alpha="0.8"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_marginTop="10dp">
+
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="15dp"
+                    android:paddingRight="10dp"
+                    android:text="ي الأيام الأولى من شهر ذي الحجة من كل عام تهفو قلوب المسلمين وتتجه أنظارهم نحو بيت الله الحرام، يحدوها  الشوق ويدفعها الأمل فيما عند الله سبحانه وتعالى، مستجيبين لدعوة أبيهم إبراهيم عليه السلام عندما أمره الله بقوله: وأذن في الناس بالحَج يأتوك رجالا وعلى كل ضَامر يأتين من كل فج عميق . ولذلك نعرض هنا لأهم ما ينبغي للحاج الإلمام به  من أحكام هذه الشعيرة العظيمة. "
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+
+                    />
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+    <ExpandableListView
+        android:id="@+id/IvExp"
+        android:layout_width="match_parent"
+
+
+        android:layout_height="match_parent"
+        android:layout_marginTop="170dp"
+
+        tools:ignore="MissingConstraints">
+
+
+    </ExpandableListView>
+</androidx.constraintlayout.widget.ConstraintLayout>

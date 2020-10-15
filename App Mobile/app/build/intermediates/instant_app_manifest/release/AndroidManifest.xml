@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.acceuil"
+    android:targetSandboxVersion="2"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="29" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.example.acceuil.Fiqh_lhajj" />
+        <activity android:name="com.example.acceuil.k6" />
+        <activity android:name="com.example.acceuil.i5" />
+        <activity android:name="com.example.acceuil.k4" />
+        <activity android:name="com.example.acceuil.k3" />
+        <activity android:name="com.example.acceuil.k2" />
+        <activity android:name="com.example.acceuil.k1" />
+        <activity android:name="com.example.acceuil.manasik2" />
+        <activity android:name="com.example.acceuil.Money_conv" />
+        <activity android:name="com.example.acceuil.salat" />
+        <activity android:name="com.example.acceuil.Login" />
+        <activity android:name="com.example.acceuil.manasik1" />
+        <activity android:name="com.example.acceuil.manasik" />
+        <activity android:name="com.example.acceuil.doaa2" />
+        <activity android:name="com.example.acceuil.doaa1" />
+        <activity android:name="com.example.acceuil.doaa" />
+        <activity
+            android:name="com.example.acceuil.drawar"
+            android:label="@string/title_activity_drawar"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.example.acceuil.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.example.acceuil.lifecycle-process"
+            android:exported="false"
+            android:multiprocess="true" />
+    </application>
+
+</manifest>
